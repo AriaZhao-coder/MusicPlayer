@@ -1,6 +1,5 @@
 import { unknownTrackImageUri } from "@/constants/image";
-import { TouchableHighlight, View, StyleSheet, Text} from "react-native"
-import FastImage from "react-native-fast-image"
+import { Image, TouchableHighlight, View, StyleSheet, Text} from "react-native"
 import { colors, fontSize } from '@/constants/tokens'
 import { defaultStyles } from '@/styles'
 
@@ -10,20 +9,16 @@ export type TracksListItemProps = {
 export const TrackListItem = ({track}: TracksListItemProps) => {
     const isActiveTrack = false
     return (
-		<TouchableHighlight
-			onPress={() => {}}
-			underlayColor={colors.background}
-		>
+		<TouchableHighlight>
 			<View style={styles.trackItemContainer}>
 				<View>
-					<FastImage source={{
-						uri: track.image ?? unknownTrackImageUri,
-					}}
+				<Image 
+					source={{ uri: track.image ?? unknownTrackImageUri }}
 					style={{
 						...styles.trackArtworkImage,
 						opacity: isActiveTrack ? 0.6 : 1,
 					}}
-					/>
+				/>
 				</View>
 				<View style={{ width: '100%'}}>
 					<Text numberOfLines={1}
