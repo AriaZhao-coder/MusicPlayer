@@ -13,15 +13,26 @@
       "resizeMode": "contain",
       "backgroundColor": "#000"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.music.player",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "audio",
+          "audio"
+        ],
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000"
-      }
+      },
+      "package": "com.music.player"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -30,8 +41,17 @@
       "expo-router"
     ],
     "experiments": {
-      "typedRouters":true,
+      "typedRouters": true,
       "tsconfigPaths": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "19d15017-b0bc-4d1d-a7e9-6e5aa6318008"
+      }
+    },
+    "owner": "ariazhao"
   }
 }
